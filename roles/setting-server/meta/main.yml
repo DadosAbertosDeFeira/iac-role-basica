@@ -8,4 +8,3 @@ galaxy_info:
 
 dependencies:
   - dokku_bot.ansible_dokku
-  - geerlingguy.swap
