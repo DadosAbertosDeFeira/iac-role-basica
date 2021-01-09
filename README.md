@@ -8,8 +8,8 @@ Aqui teremos a lista de tarefas e qualquer documento necessário pra ajudar pess
 
 ### Requisitos:
 
- - Python 3 [installed](https://www.python.org/downloads/)
- - Molecule [installed](https://molecule.readthedocs.io/en/latest/installation.html):
+ - Instale o [Python 3](https://www.python.org/downloads/)
+ - Instale o [Molecule](https://molecule.readthedocs.io/en/latest/installation.html):
 
     ```
     $ python3 -m venv .venv
@@ -17,7 +17,7 @@ Aqui teremos a lista de tarefas e qualquer documento necessário pra ajudar pess
     $ pip install "molecule[docker,lint]"
     ```
 
- - Testando as roles
+ - Testando as roles:
 
     ```
     $ cd /roles/setting-server
