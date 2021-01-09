@@ -1,1 +1,1 @@
-setting-server/molecule/default/converge.yml
+roles/setting-server/molecule/default/converge.yml
