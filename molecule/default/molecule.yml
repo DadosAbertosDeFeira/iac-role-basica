@@ -8,11 +8,9 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: ubuntu-18.04
+  - name: ubuntu-18.04-iac-role-basica
     image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu1804}-ansible:latest"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
-    published_ports:
-      - 80:80/tcp
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
