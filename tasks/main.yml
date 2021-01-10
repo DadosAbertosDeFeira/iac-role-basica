@@ -1,0 +1,13 @@
+---
+- name: Criar a conta do usuário gomex
+  user:
+    name: gomex
+    shell: /bin/bash
+    password: "$6$RsOxdMJD$TVnLVpoFK6SGb8XEY3aEI71aJ.dGiWh3FaIrBkjkcMLpX89dgjjl4LglYV1iZbXdamCf/u0U/qw.H2VW0qULA0"
+    groups: sudo
+    append: yes
+- name: Adicionar a chave publica para o usuário gomex
+  authorized_key:
+    user: gomex
+    state: present
+    key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYc9rlj0wKka5t31T4EiTanSmXpswDg00dYmuwdvEW3bAovcdzt6p3kgFxpPaZj7X6oFfvSCXpoL+/yjngujEW9CGbqfdVyvCodIuIaGuoUsxo7dtMCLzqZtGGe1m6xoTyNqZQzv68nF1fZ/ku7YNK9HGKKcjNJVvs6ocqK5Jbdb6IGRF64kP4hx8IX5n8CU8APn5esrh6BNhViKHWYIGDYoFkd54Z4CeD156BYl1OhWbla6u1vOntpj1uw3Lp+haAWbXSJMCpztsYPeynrQ14GUbHPRAsO4IILD5CtZWsp16VnEIAhsIqrnzp1BGTduwbX5VVzY3K7JdFNEWThFhd"

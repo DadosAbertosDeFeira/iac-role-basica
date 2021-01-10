@@ -8,4 +8,4 @@
         cache_valid_time: 3600
       when: ansible_os_family == 'Debian'
   roles:
-    - role: setting-server
+    - role: iac-role-basica

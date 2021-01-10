@@ -1,10 +1,7 @@
 galaxy_info:
   author: Dados Abertos de Feira
-  description: Role para configurar servidor
+  description: Role básica para configurar servidor
 
   platforms:
     - name: Ubuntu
       release: bionic
-
-dependencies:
-  - dokku_bot.ansible_dokku
