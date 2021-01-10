@@ -1,0 +1,8 @@
+---
+- name: Excutando o Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: Examplo de assertion
+    assert:
+      that: true

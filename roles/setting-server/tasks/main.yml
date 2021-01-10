@@ -1,0 +1,38 @@
+---
+- name: Importando a role dokku_bot.ansible_dokku role
+  import_role:
+    name: dokku_bot.ansible_dokku
+  vars:
+    dokku_version: 0.22.5
+    sshcommand_version: 0.12.0
+    dokku_plugins:
+      - name: clone
+        url: https://github.com/crisward/dokku-clone.git
+      - name: letsencrypt
+        url: https://github.com/dokku/dokku-letsencrypt.git
+
+# - name: import geerlingguy.swap role
+#   import_role:
+#     name: geerlingguy.swap
+
+- name: Criando o app
+  dokku_app:
+    app: &appname teste
+
+- name: Configurando o ambiente
+  dokku_config:
+    app: *appname
+    config:
+      DOKKU_LETSENCRYPT_EMAIL: linux.rafa@gmail.com
+      PORT: "5000"
+
+- name: Efetuando o git clone
+  dokku_clone:
+    app: *appname
+    repository: https://github.com/DadosAbertosDeFeira/maria-quiteria.git main
+
+- name: Adicionando o domain
+  dokku_domains:
+    app: *appname
+    domains:
+      - mariaquiteria.gomex.me
