@@ -32,3 +32,12 @@
     key: "{{ item.ssh_key }}"
   with_items: "{{ dokku_users }}"
   when: dokku_users is defined
+
+- name: Hardening SSH
+    ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: "{{ item.option }}"
+    line: "{{ item.option }}" "{{ item.key }}"
+   with_itens: "{{ ssh_hard }}"
+   when: ssh_hard is defined
+         

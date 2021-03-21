@@ -14,3 +14,42 @@
       - name: gomex
         username: gomex
         ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYc9rlj0wKka5t31T4EiTanSmXpswDg00dYmuwdvEW3bAovcdzt6p3kgFxpPaZj7X6oFfvSCXpoL+/yjngujEW9CGbqfdVyvCodIuIaGuoUsxo7dtMCLzqZtGGe1m6xoTyNqZQzv68nF1fZ/ku7YNK9HGKKcjNJVvs6ocqK5Jbdb6IGRF64kP4hx8IX5n8CU8APn5esrh6BNhViKHWYIGDYoFkd54Z4CeD156BYl1OhWbla6u1vOntpj1uw3Lp+haAWbXSJMCpztsYPeynrQ14GUbHPRAsO4IILD5CtZWsp16VnEIAhsIqrnzp1BGTduwbX5VVzY3K7JdFNEWThFhd"
+    ssh_hard:
+      - option: permitrootlogin
+        key: no
+      - option: PubkeyAuthentication
+        key: yes
+      - option: PasswordAuthentication
+        key: no
+      - option: PermitEmptyPasswords
+        key: no
+      - option: logingracetime
+        key: 20
+      - option: MaxAuthTries
+        key: 3
+      - option: HostbasedAuthentication
+        key: no
+      - option: ChallengeResponseAuthentication
+        key: no
+      - option: KerberosAuthentication
+        key: no
+      - option: GSSAPIAuthentication
+        key: no
+      - option: X11Forwarding
+        key: no
+      - option: PermitUserEnvironment
+        key: no
+      - option: AllowAgentForwarding
+        key: no
+      - option: AllowTcpForwarding
+        key: no
+      - option: PermitTunnel
+        key: no
+      - option: Banner
+        key: none
+      - option: VersionAddendum
+        key: none
+      - option: Protocol
+        key: 2
+      - option: IgnoreRhosts
+        key: yes
