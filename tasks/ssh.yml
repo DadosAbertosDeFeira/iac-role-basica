@@ -1,0 +1,14 @@
+---
+- name: Instalando o sshd
+  apt:
+    name: openssh-server
+    state: present
+    update_cache: yes
+
+- name: Configurando o sshd
+  template:
+    src: sshd_config
+    dest: /etc/ssh/
+    validate: /usr/sbin/sshd -t -f %s
+  notify:
+    - Reiniciar sshd
