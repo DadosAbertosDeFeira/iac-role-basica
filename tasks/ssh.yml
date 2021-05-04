@@ -5,6 +5,12 @@
     state: present
     update_cache: yes
 
+- name: Criando /var/run/sshd
+  file:
+    path: /var/run/sshd
+    state: directory
+    mode: '0755'
+
 - name: Configurando o sshd
   template:
     src: sshd_config
