@@ -1,2 +1,4 @@
 .venv/
 molecule/*/tests/__pycache__
+.cache/
+.vscode/
