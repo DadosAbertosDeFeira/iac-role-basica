@@ -32,3 +32,5 @@
     key: "{{ item.ssh_key }}"
   with_items: "{{ dokku_users }}"
   when: dokku_users is defined
+
+- import_tasks: ssh.yml

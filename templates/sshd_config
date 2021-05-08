@@ -1,0 +1,23 @@
+ChallengeResponseAuthentication no
+UsePAM yes
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem	sftp	/usr/lib/openssh/sftp-server
+
+# Hardening
+PermitRootLogin {{ PermitRootLogin }}
+PubkeyAuthentication {{ PubkeyAuthentication }}
+PasswordAuthentication {{ PasswordAuthentication }}
+PermitEmptyPasswords {{ PermitEmptyPasswords }}
+LoginGraceTime {{ LoginGraceTime }}
+HostbasedAuthentication {{ HostbasedAuthentication }}
+ChallengeResponseAuthentication {{ ChallengeResponseAuthentication }}
+KerberosAuthentication {{ KerberosAuthentication }}
+GSSAPIAuthentication {{ GSSAPIAuthentication }}
+X11Forwarding {{ X11Forwarding }}
+PermitUserEnvironment {{ PermitUserEnvironment }}
+AllowAgentForwarding {{ AllowAgentForwarding }}
+AllowTcpForwarding {{ AllowTcpForwarding }}
+PermitTunnel {{ PermitTunnel }}
+Banner {{ Banner }}
+Protocol {{ Protocol }}

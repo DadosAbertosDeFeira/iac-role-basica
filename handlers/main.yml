@@ -1,2 +1,6 @@
 ---
 # handlers file for iac-role-basica
+- name: Reiniciar sshd
+  systemd:
+    name: sshd
+    state: restarted

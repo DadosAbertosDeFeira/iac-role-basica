@@ -1,2 +1,18 @@
 ---
 # defaults file for iac-role-basica
+PermitRootLogin: "no"
+PubkeyAuthentication: "yes"
+PasswordAuthentication: "no"
+PermitEmptyPasswords: "no"
+LoginGraceTime: "120"
+HostbasedAuthentication: "no"
+ChallengeResponseAuthentication: "no"
+KerberosAuthentication: "no"
+GSSAPIAuthentication: "no"
+X11Forwarding: "no"
+PermitUserEnvironment: "no"
+AllowAgentForwarding: "no"
+AllowTcpForwarding: "no"
+PermitTunnel: "no"
+Banner: "none"
+Protocol: 2
