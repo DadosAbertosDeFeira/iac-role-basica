@@ -3,15 +3,24 @@ on: [push, pull_request]
 jobs:
   linter:
     runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        python-version: [3.9]
     steps:
       - uses: actions/checkout@v2
-      - name: Lint ansible playbook
-        uses: ansible/ansible-lint-action@v4.1.0
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
         with:
-          targets: |
-            tasks/main.yml
-            handlers/main.yml
-        
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
+      - name: Run Linters
+        run: |
+          ansible-lint
+          yamllint .
+
   molecule:
     runs-on: ubuntu-18.04
     strategy:
