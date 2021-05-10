@@ -1,0 +1,6 @@
+version: '1'
+
+tools:
+  ansiblelint:
+    files:
+      - tasks/*.{yaml,yml}
