@@ -3,4 +3,10 @@ version: '1'
 tools:
   ansiblelint:
     files:
-      - tasks/*.{yaml,yml}
+      - tasks/
+      - defaults/
+      - handlers/
+      - meta/
+      - templates/
+      - tests/
+      - vars/
