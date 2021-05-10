@@ -1,8 +1,19 @@
 name: CI
 on: [push, pull_request]
 jobs:
+  linter:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Lint ansible playbook
+        uses: ansible/ansible-lint-action@v4.1.0
+        with:
+          target: |
+            tasks/main.yml
+            handlers/main.yml
+        
   molecule:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     strategy:
       matrix:
         python_version: [3.9]
