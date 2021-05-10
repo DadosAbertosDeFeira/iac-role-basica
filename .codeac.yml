@@ -1,7 +1,7 @@
 version: '1'
 
 tools:
-  ansiblelint:
+  ansibleLint:
     files:
       - tasks/
       - defaults/
