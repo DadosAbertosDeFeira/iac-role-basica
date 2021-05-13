@@ -1,9 +1,10 @@
 exclude_paths:
   - .github/
   - .cache/
-  - molecule/default/*
+  - molecule/default/*.yml
 skip_list:
   - "106"
+  - "204"
 offline: false
 use_default_rules: true
 parseable: true
