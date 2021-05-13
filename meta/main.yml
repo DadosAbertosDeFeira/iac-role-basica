@@ -5,7 +5,9 @@ galaxy_info:
   license: license AGPL-3.0-or-later
   company: ""
   galaxy_tags:
-    - ""
+    - "molecule"
+    - "codeac"
+    - "ssh"
   platforms:
     - name: Ubuntu
       release: bionic
