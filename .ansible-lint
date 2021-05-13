@@ -2,3 +2,9 @@ exclude_paths:
   - .github/
   - .cache/
   - molecule/
+skip_list:
+  - "106"
+offline: false
+use_default_rules: true
+parseable: true
+verbosity: 1
