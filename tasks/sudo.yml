@@ -10,7 +10,7 @@
     state: absent
     regexp: '^%sudo'
     validate: /usr/sbin/visudo -cf %s
-    
+
 - name: Configurando include no sudoers
   lineinfile:
     path: /etc/sudoers
@@ -21,7 +21,7 @@
 - name: Configurando grupo sudo
   copy:
     src: group_sudo
-    dest: /etc/sudoers.d 
+    dest: /etc/sudoers.d
     owner: root
     group: root
     mode: '0440'
