@@ -33,4 +33,8 @@
   with_items: "{{ dokku_users }}"
   when: dokku_users is defined
 
-- import_tasks: ssh.yml
+- name: Importar task de configuração do ssh
+  import_tasks: ssh.yml
+
+- name: Importar task de configuração do sudo
+  import_tasks: sudo.yml
