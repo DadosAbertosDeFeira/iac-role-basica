@@ -14,11 +14,11 @@ rules:
   line-length: disable
   truthy:
     allowed-values: [
-    'True',
-    'true',
-    'False',
-    'false',
-    'no',
-    'yes'
+      'True',
+      'true',
+      'False',
+      'false',
+      'no',
+      'yes'
     ]
     check-keys: true
