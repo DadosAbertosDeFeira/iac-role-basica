@@ -1,0 +1,8 @@
+---
+version: '1'
+
+tools:
+  ansibleLint:
+    files:
+      - tasks/*.yml
+      - handlers/*.yml

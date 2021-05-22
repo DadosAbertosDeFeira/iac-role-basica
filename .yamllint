@@ -1,0 +1,24 @@
+---
+extends: default
+ignore: |
+  .github/
+  roles/
+  .venv/
+rules:
+  braces:
+    max-spaces-inside: 1
+    level: error
+  brackets:
+    max-spaces-inside: 1
+    level: error
+  line-length: disable
+  truthy:
+    allowed-values: [
+      'True',
+      'true',
+      'False',
+      'false',
+      'no',
+      'yes'
+    ]
+    check-keys: true

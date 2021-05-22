@@ -1,0 +1,42 @@
+---
+name: CI
+on: [push, pull_request]
+jobs:
+  linter:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        python-version: [3.9]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
+      - name: Run Linters
+        run: |
+          ansible-lint
+          yamllint .
+
+  molecule:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        python_version: [3.9]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip setuptools
+          python3 -m pip install -r requirements.txt
+      - name: Test with molecule
+        run: |
+          molecule test

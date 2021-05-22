@@ -1,7 +1,15 @@
+---
 galaxy_info:
   author: Dados Abertos de Feira
   description: Role básica para configurar servidor
-
+  min_ansible_version: "2.10.5"
+  license: license AGPL-3.0-or-later
+  company: ""
+  role_name: iac_role_basica
+  galaxy_tags:
+    - "molecule"
+    - "codeac"
+    - "ssh"
   platforms:
     - name: Ubuntu
       release: bionic
