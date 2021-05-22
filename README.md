@@ -14,7 +14,7 @@ Aqui teremos a lista de tarefas e qualquer documento necessário pra ajudar pess
     ```
     $ python3 -m venv .venv
     $ source .venv/bin/activate
-    $ pip install "molecule[docker,lint]" pytest-testinfra
+    $ pip install -r requirements.txt
     ```
 
  - Testando a role:
