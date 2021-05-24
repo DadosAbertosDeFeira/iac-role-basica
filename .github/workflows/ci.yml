@@ -20,7 +20,6 @@ jobs:
       - name: Run Linters
         run: |
           ansible-lint
-          yamllint .
 
   molecule:
     runs-on: ubuntu-18.04
@@ -40,6 +39,6 @@ jobs:
           python3 -m pip install -r requirements.txt
       - name: Test with molecule
         run: |
-          molecule test
+          molecule test --all
         env:
           MOLECULE_DISTRO: ${{ matrix.molecule_distro }}
