@@ -20,13 +20,14 @@ jobs:
       - name: Run Linters
         run: |
           ansible-lint
-          yamllint .
 
   molecule:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
         python_version: [3.9]
+        molecule_distro: [ubuntu1804, ubuntu2004]
+
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
@@ -39,4 +40,6 @@ jobs:
           python3 -m pip install -r requirements.txt
       - name: Test with molecule
         run: |
-          molecule test
+          molecule test --all
+        env:
+          MOLECULE_DISTRO: ${{ matrix.molecule_distro }}
